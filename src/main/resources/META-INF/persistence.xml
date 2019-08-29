@@ -3,6 +3,8 @@
   <persistence-unit name="db_JPA" transaction-type="JTA">
     <jta-data-source>java:/jboss/datasources/ExampleDS</jta-data-source>
     <class>beans.Goods</class>
+    <class>beans.OrderItem</class>
+    <class>beans.Order</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>

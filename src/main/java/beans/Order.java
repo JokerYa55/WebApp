@@ -9,8 +9,10 @@ import ejb.OrderInterface;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,6 +24,10 @@ public class Order implements OrderInterface, Serializable {
     private Long id;
     private String name;
     private String address;
+    @OneToMany(
+        cascade = CascadeType.ALL,
+        orphanRemoval = true
+    )
     private final List<OrderItem> orderItemList = new LinkedList<>();
 
     public Order() {

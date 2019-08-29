@@ -8,6 +8,8 @@ package beans;
 import java.math.BigDecimal;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -17,6 +19,8 @@ import javax.persistence.Id;
 public class OrderItem {
     @Id
     int id;
+    @ManyToOne
+    @JoinColumn(name = "goodsid")
     private Goods goods;
     private int quntity = 0;
     private BigDecimal price = new BigDecimal(0);
