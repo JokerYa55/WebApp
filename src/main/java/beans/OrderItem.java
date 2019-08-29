@@ -6,13 +6,16 @@
 package beans;
 
 import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author vasil
  */
+@Entity
 public class OrderItem {
-
+    @Id
     int id;
     private Goods goods;
     private int quntity = 0;

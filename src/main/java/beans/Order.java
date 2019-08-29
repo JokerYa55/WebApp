@@ -6,15 +6,19 @@
 package beans;
 
 import ejb.OrderInterface;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author vasil
  */
-public class Order implements OrderInterface {
-
+@Entity
+public class Order implements OrderInterface, Serializable {
+    @Id
     private Long id;
     private String name;
     private String address;

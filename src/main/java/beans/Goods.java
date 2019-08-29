@@ -5,11 +5,16 @@
  */
 package beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author vasil
  */
+@Entity
 public class Goods {
+    @Id
     private Long id;
     private String name;
 
